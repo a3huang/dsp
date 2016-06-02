@@ -16,13 +16,21 @@ Make a cheat sheet for yourself: a list of at least **ten** commands and what th
 cp: makes copy of a file and puts it in another directory
 
 mv: moves original file to another directory
+
 find: finds files in a given directory
+
 grep: finds particular strings in a given file
+
 kill: terminates a process
+
 ls: lists files and directories
+
 pwd: prints working directory
+
 man: displays documentation for command
+
 rm: removes files or directories ; use option -r to delete non-empty directory
+
 sort: sorts a given file
 
 ---
@@ -39,12 +47,18 @@ What do the following commands do:
 `ls -Glp`  
 
 `ls`: lists files and directories in current directory \n
+
 `ls -a`: same as above including hidden dot files (a)
+
 `ls -l`: displays files and directories in long format (l) ; gives information on size, ownership, modification date
+
 `ls -lh`: same as above except that it displays the units for the file sizes (B, K, etc.) ; meant to be human readable (h)
+
 `ls -lah`: in addition to the above, also displays information on hidden files
+
 `ls -t`: lists all files and directories sorted by time modified (t) with most recently modified first and then going down  
 columns
+
 `ls -Glp`: lists files and directories in long form (l) with colorized output (G) and putting a slash after filenames that are directories (p) ; in my case the directory names were now in blue and everything else remained black
 
 ---
