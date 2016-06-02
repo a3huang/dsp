@@ -46,7 +46,7 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-`ls`: lists files and directories in current directory \n
+`ls`: lists files and directories in current directory
 
 `ls -a`: same as above including hidden dot files (a)
 
