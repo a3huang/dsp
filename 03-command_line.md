@@ -37,7 +37,7 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-`ls`: lists files and directories in current directory
+`ls`: lists files and directories in current directory \n
 `ls -a`: same as above including hidden dot files (a)
 `ls -l`: displays files and directories in long format (l) ; gives information on size, ownership, modification date
 `ls -lh`: same as above except that it displays the units for the file sizes (B, K, etc.) ; meant to be human readable (h)
