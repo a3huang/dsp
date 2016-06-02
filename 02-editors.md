@@ -60,7 +60,7 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What terminal editor will you use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+I will use Emacs. It was the first command line editor that I learned and I still stick with it. I chose to learn Emacs because a lot of my computer savvy peers in my graduate program recommended it to me.
 
 --
 
@@ -68,6 +68,6 @@ What terminal editor will you use? How did you make your decision?
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+I will probably just use Emacs throughout. I am pretty used to it so far and do not see a need to set up a graphical editor. I like being able to switch between the editor and the command line to immediately test my code. To go from Emacs to the command line, I just have to type "C-z" and to return to Emacs, I just have to type "fg".
 
  
