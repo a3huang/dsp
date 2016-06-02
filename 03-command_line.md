@@ -14,6 +14,7 @@ these in a couple of hours.
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do, focused on things that are new, interesting, or otherwise worth remembering.
 
 cp: makes copy of a file and puts it in another directory
+
 mv: moves original file to another directory
 find: finds files in a given directory
 grep: finds particular strings in a given file
