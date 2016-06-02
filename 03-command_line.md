@@ -68,9 +68,13 @@ columns
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
 `ls -r`: displays files in reverse alphabetical order
+
 `ls -hlS`: displays files in human readable long form with largest files first
+
 `ls -1`: displays one file per line
+
 `ls -m`: displays files as comma separated list
+
 `ls -lT`: display complete time information about each file including hour, minute, second, month, day, and year
 
 ---
@@ -79,7 +83,9 @@ Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) 
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+The xargs command is usually used to pass arguments from the output of a pipe into another command.
+
+ex) `find . -name "*.c" -print0 | xargs -0 rm -rf`: removes all files ending in ".c" in the current directory including the ones that have spaces in their names.
 
  
 
