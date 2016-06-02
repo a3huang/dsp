@@ -67,7 +67,11 @@ columns
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+`ls -r`: displays files in reverse alphabetical order
+`ls -hlS`: displays files in human readable long form with largest files first
+`ls -1`: displays one file per line
+`ls -m`: displays files as comma separated list
+`ls -lT`: display complete time information about each file including hour, minute, second, month, day, and year
 
 ---
 
