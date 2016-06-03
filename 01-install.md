@@ -46,7 +46,7 @@ cross-platform.
 
 Did you install Python 2 or 3? Why?  
 
-I installed Python 2 since it was recommended to me in a tutorial to download Python 2 rather than Python 3. I have stuck with Python 2 ever since
+I installed Python 2 since it was recommended to me in a tutorial to download Python 2 rather than Python 3. I have stuck with Python 2 ever since.
 
 ###Q2. Which Python Version Installed   
 
