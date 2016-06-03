@@ -68,6 +68,6 @@ I will use Emacs. It was the first command line editor that I learned and I stil
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
-I will probably just use Emacs throughout. I am pretty used to it so far and do not see a need to set up a graphical editor. I like being able to switch between the editor and the command line to immediately test my code. To go from Emacs to the command line, I just have to type "C-z" and to return to Emacs, I just have to type "fg".
+I will probably just use Emacs throughout. I am pretty used to it so far and do not see a need to set up a graphical editor. I like being able to switch between the editor and the command line to immediately test my code. To go from Emacs to the command line, I just have to type "C-z" and to return to Emacs, I just have to type "fg". Other shortcuts include C-x f to open a new file or C-x b to switch buffers. To configure options in Emacs, I can use Emacs Lisp statements in the ~/.emacs file to specify options. So far I have adjusted the tab to 4 spaces and to have all back up and auto save files go to a temporary folder so that they won't clutter up my working directory.
 
  
