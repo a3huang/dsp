@@ -52,7 +52,7 @@ I installed Python 2 since it was recommended to me in a tutorial to download Py
 
 How can you check the version of Python installed if you happen to be on an unfamiliar computer?
 
-You can use the command "python --version".
+You can use the command `python --version`.
 
  
 
