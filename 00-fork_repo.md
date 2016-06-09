@@ -55,6 +55,6 @@ Here's your first chance to practice this:
 
 What is your favorite [emoji](http://www.emoji-cheat-sheet.com/)?
 
-I like this one :no_good:.
+This one is my favorite :no_good:.
 
 

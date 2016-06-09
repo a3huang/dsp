@@ -85,7 +85,7 @@ What does `xargs` do? Give an example of how to use it.
 
 The xargs command reads from standard input and converts each line (element separated by whitespace) into arguments to another command.
 
-ex) `find . -name "*.c" -print0 | xargs -0 rm -rf`: Removes all files ending in ".c" in the current directory including the ones that have spaces in their names. The -print0 option of find puts a null character at the end of each filename and the -0 option of xargs makes it treat null characters as delimiters rather than spaces.
+ex) `find . -name "*.c" -print0 | xargs -0 rm -rf`: removes all files ending in ".c" in the current directory including the ones that have spaces in their names ; the -print0 option of find puts a null character at the end of each filename and the -0 option of xargs makes it treat null characters as delimiters rather than spaces
 
 ex) `echo dir1 dir2 | xargs ls`: lists the files in the directory named dir1 and in the directory named dir2
 
