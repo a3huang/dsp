@@ -11,8 +11,7 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 ###Q1. Lists &amp; Tuples
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
-
-Lists and tuples both store collections of items, which can all be of different types. We can also iterate over, perform slicing on, perform concatenation on, and use the in operator with both lists and tuples. However, the main difference between them are that lists are mutable, while tuples are not. This means that we can use tuples, but not lists, as keys in dictionaries. Another difference between them is that lists have access to built-in methods such as append, extend, and sort, while tuples do not.
+Lists and tuples both store collections of items, which can all be of different types. We can also iterate over, perform slicing on, perform concatenation on, and use the `in` operator with both lists and tuples. However, the main difference between them are that lists are mutable, while tuples are not. This means that we can use tuples, but not lists, as keys in dictionaries. Another difference between them is that lists have access to built-in methods such as append, extend, and sort, while tuples do not.
 ---
 
 ###Q2. Lists &amp; Sets
