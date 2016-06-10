@@ -1,6 +1,6 @@
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
-
+import string
 
 def donuts(count):
     """
@@ -18,8 +18,10 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
-
+    if count < 10:
+        return 'Number of donuts: %d' % count
+    else:
+        return 'Number of donuts: many'    
 
 def both_ends(s):
     """
@@ -37,8 +39,10 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
-
+    if len(s) < 2:
+        return ''
+    else:
+        return s[:2] + s[-2:]    
 
 def fix_start(s):
     """
@@ -56,7 +60,9 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    start = s[0]
+    rest = s.translate(string.maketrans(start,'*'))[1:]
+    return start + rest
 
 
 def mix_up(a, b):
@@ -74,6 +80,7 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
+    return b[:2] + a[2:] + " " + a[:2] + b[2:]
     raise NotImplementedError
 
 
@@ -91,9 +98,14 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
-
-
+    if len(s) >= 3:
+        if s[-3:] == "ing":
+            return s + "ly"
+        else:
+            return s + "ing"
+    else:
+        return s
+    
 def not_bad(s):
     """
     Given a string, find the first appearance of the substring 'not'
@@ -111,7 +123,16 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    try:
+        not_ind = s.index("not")
+        bad_ind = s.index("bad")
+    except ValueError:
+        return s
+
+    if not_ind < bad_ind:
+        return s[:not_ind] + "good" + s[bad_ind + 3:]
+    else:
+        return s
 
 
 def front_back(a, b):
@@ -130,4 +151,13 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    def mid(s):
+        if len(s) % 2 == 0:
+            return len(s)/2
+        else:
+            return len(s)/2 + 1
+    
+    mid_a = mid(a)
+    mid_b = mid(b)
+    return a[:mid_a] + b[:mid_b] + a[mid_a:] + b[mid_b:]
+   
