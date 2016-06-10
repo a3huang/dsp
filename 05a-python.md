@@ -25,7 +25,6 @@ Lists and sets both store collections of items. However, sets do not have any du
 Lists are great for when you want an ordering on a sequence of items.
 
 For example:
-
 ```python
 l = list("string")
 l.sort()
@@ -36,7 +35,6 @@ Here, we convert the string called "string" into a list of characters and sort t
 Sets on the other hand are nice when all we care about is checking whether we have a certain element or not (ignoring duplicates). Say we have a long list of words named `l` and we want to check if the word "swallow" is contained in `l`. 
 
 We can do for example:
-
 ```python
 s = set(l)
 "swallow" in s
