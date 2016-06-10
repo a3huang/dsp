@@ -64,7 +64,6 @@ def fix_start(s):
     rest = s.translate(string.maketrans(start,'*'))[1:]
     return start + rest
 
-
 def mix_up(a, b):
     """
     Given strings a and b, return a single string with a and b
@@ -157,4 +156,3 @@ def front_back(a, b):
     mid_a = mid(a)
     mid_b = mid(b)
     return a[:mid_a] + b[:mid_b] + a[mid_a:] + b[mid_b:]
-   
