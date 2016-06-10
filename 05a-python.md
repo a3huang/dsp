@@ -31,6 +31,7 @@ Sets on the other hand are nice when all we care about is checking whether we ha
 `s = set(l)`
 `"swallow" in s`
 Once we dump the entire list into a set, we can easily check whether it contains a given element or not.
+
 ---
 
 ###Q3. Lambda Function
