@@ -27,6 +27,7 @@ Lists are great for when you want an ordering on a sequence of items.
 For example:
 
 `l = list("string")`
+
 `l.sort()`
 
 Here, we convert the string called "string" into a list of characters and sort them in alphabetical order.
@@ -36,6 +37,7 @@ Sets on the other hand are nice when all we care about is checking whether we ha
 We can do for example:
 
 `s = set(l)`
+
 `"swallow" in s`
 
 Once we dump the entire list into a set, we can easily check whether it contains a given element or not.
@@ -51,6 +53,7 @@ Python's `lambda` can be used to create anonymous functions. If it's for somethi
 For example:
 
 `a = [(2, 3), (6, 7), (3, 34), (24, 64), (1, 43)]`
+
 `a.sort(key=lambda x: x[1])`
 
 By default `sort` sorts lists of tuples in increasing order on the first element, but we can use `lambda` to specify the second element of each tuple as the key to sort on instead.
@@ -69,8 +72,11 @@ For example:
 
 is the same as writing:
 `l = list()
+
 for x in range(1,10):
+
     if x % 3 == 0:
+    
         l.append(x**2)`
 
 We can also achieve the same result using `map` and `filter` as follows:
