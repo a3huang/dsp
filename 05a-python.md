@@ -12,7 +12,7 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
-Lists and tuples both store collections of items, which can all be of different types. We can also iterate over, perform slicing on, perform concatenation on, and use the `in` operator with both lists and tuples. However, the main difference between them are that lists are mutable, while tuples are not. This means that we can use tuples, but not lists, as keys in dictionaries. Another difference between them is that lists have access to built-in methods such as append, extend, and sort, while tuples do not.
+Lists and tuples both store collections of items, which can all be of different types. They share the same syntax for iteration, slicing, concatenation, and checking for containment using the `in` operator. However, the main difference between them is that lists are mutable, while tuples are not. This means that we can use tuples, but not lists, as keys in dictionaries. Another difference between them is that lists have access to built-in methods such as append, extend, and sort, while tuples do not.
 
 ---
 
@@ -20,25 +20,20 @@ Lists and tuples both store collections of items, which can all be of different 
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
-Lists and sets both store collections of items. However, sets do not have any duplicates as they only store unique values. Furthermore, unlike lists, sets do not have an inherent ordering. Searching for an element in a set has time complexity O(1) since it's implemented by a hash table which allows for fast lookup. However, the time complexity to search for an element in a list is O(n) since Python must perform a linear search on the list.
+Lists and sets both store collections of items. However, unlike lists, sets do not allow for duplicate items. This can often be used to our advantage whenever we want to pick out the unique elements of a list. We simply have to convert the list into a set using the function `set`. Furthermore, unlike lists, sets do not have an inherent ordering. The upside to this is that searching for an element in a set has time complexity O(1) since it's implemented by a hash table which allows for fast lookup. However, the time complexity to search for an element in a list is O(n) since Python performs a linear search on the list.
 
-Lists are great for when you want an ordering on a sequence of items.
-
-For example:
+Lists are great for when you want some kind of ordering on a sequence of items (as is the case when you want to sort a collection). For example, we can write something like:
 ```python
-l = list("string")
-l.sort()
+sorted(d.items(), key=lambda x: x[1]) 
 ```
-Here, we convert the string called "string" into a list of characters and sort them in alphabetical order.
+Our goal here is to sort the dictionary `d` so we extract its contents in the form of a list of tuples. Then we can for instance sort the list by the values of the dictionary (second element of each tuple). While, the sorted function does work on dictionaries, it only returns a sorted list of the keys and forgets about the values.
 
-Sets on the other hand are nice when all we care about is checking whether we have a certain element or not (ignoring duplicates). Say we have a long list of words named `l` and we want to check if the word "swallow" is contained in `l`. 
-
-We can do for example:
+Sets on the other hand are nice when all we care about is checking whether or not a collection contains a certain element (ignoring duplicates). We can dump the contents of the collection into a set (taking O(n) time) and then easily check for inclusion using `in` afterwards. While dictionaries provide similar functionality in terms of fast look up, sets can be more convenient because we don't have to set values for each of our keys. Another example of using sets is the following:
 ```python
-s = set(l)
-"swallow" in s
+friends_dict = {'Mark':['Bob', 'James', 'Cameron'], 'Jim':['Mark', 'Cameron', 'Kirk'], 'Bob':['Mark', 'Jim', 'Steve']}
+unique_friends = {names for friends in friends_dict.values() for names in friends}
 ```
-Once we dump the entire list into a set, we can easily check whether it contains a given element or not.
+Here we wish to flatten the dictionary which maps people to their list of friends. We then want to obtain only the unique names from the dictionary. We can do this by performing a set comprehension instead of a list comprehension, with minimal change in syntax.
 
 ---
 
