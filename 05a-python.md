@@ -28,6 +28,7 @@ For example:
 
 `l = list("string")`
 `l.sort()`
+
 Here, we convert the string called "string" into a list of characters and sort them in alphabetical order.
 
 Sets on the other hand are nice when all we care about is checking whether we have a certain element or not (ignoring duplicates). Say we have a long list of words named `l` and we want to check if the word "swallow" is contained in `l`. 
@@ -46,9 +47,12 @@ Once we dump the entire list into a set, we can easily check whether it contains
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
 Python's `lambda` can be used to create anonymous functions. If it's for something we're probably going to use only once, rather than going out of our way to define a named function for it, we can just create a "disposable" function using `lambda`. One of the most common uses of `lambda` is to create "key" functions for `sort`.
+
 For example:
+
 `a = [(2, 3), (6, 7), (3, 34), (24, 64), (1, 43)]`
 `a.sort(key=lambda x: x[1])`
+
 By default `sort` sorts lists of tuples in increasing order on the first element, but we can use `lambda` to specify the second element of each tuple as the key to sort on instead.
 
 ---
@@ -58,7 +62,9 @@ By default `sort` sorts lists of tuples in increasing order on the first element
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
 List comprehensions offer a neat and concise way of creating lists of elements in a single statement.
+
 For example:
+
 `l = [x**2 for x in range(1,10) if x % 3 == 0]`
 
 is the same as writing:
@@ -75,10 +81,13 @@ The performance of `map` and `filter` v.s. using a list comprehension is compara
 
 Set and dictionary comprehensions work pretty much the same way as list comprehensions. 
 For example, let's say that `colors` is a list of strings of color names (with duplicates). Then, to count up the frequencies of each color, we can perform a dictionary comprehension as follows:
+
 `freq = {color: colors.count(color) for color in set(colors)}`
+
 Here we want to iterate over the unique values in `colors` so we convert it into a set in the above.
 
 As an example of a set comprehension, we can find all (unique) primes up to 100:
+
 `primes = {x for x in range(2, 101) if all(x % y for y in range(2, x))}`
 
 ---
