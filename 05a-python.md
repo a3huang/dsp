@@ -28,7 +28,9 @@ For example:
 `l.sort()`
 Here, we convert the string called "string" into a list of characters and sort them in alphabetical order.
 
-Sets on the other hand are nice when all we care about is checking whether we have a certain element or not (ignoring duplicates). Say we have a long list of words named `l` and we want to check if the word "swallow" is contained in `l`. We can do for example:
+Sets on the other hand are nice when all we care about is checking whether we have a certain element or not (ignoring duplicates). Say we have a long list of words named `l` and we want to check if the word "swallow" is contained in `l`. 
+
+We can do for example:
 `s = set(l)`
 `"swallow" in s`
 
