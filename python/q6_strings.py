@@ -81,8 +81,6 @@ def mix_up(a, b):
     'fizzy perm'
     """
     return b[:2] + a[2:] + " " + a[:2] + b[2:]
-    raise NotImplementedError
-
 
 def verbing(s):
     """
@@ -133,7 +131,6 @@ def not_bad(s):
         return s[:not_ind] + "good" + s[bad_ind + 3:]
     else:
         return s
-
 
 def front_back(a, b):
     """
