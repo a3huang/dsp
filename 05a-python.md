@@ -29,7 +29,6 @@ For example:
 l = list("string")
 l.sort()
 ```
-
 Here, we convert the string called "string" into a list of characters and sort them in alphabetical order.
 
 Sets on the other hand are nice when all we care about is checking whether we have a certain element or not (ignoring duplicates). Say we have a long list of words named `l` and we want to check if the word "swallow" is contained in `l`. 
@@ -39,7 +38,6 @@ We can do for example:
 s = set(l)
 "swallow" in s
 ```
-
 Once we dump the entire list into a set, we can easily check whether it contains a given element or not.
 
 ---
@@ -55,7 +53,6 @@ For example:
 a = [(2, 3), (6, 7), (3, 34), (24, 64), (1, 43)]
 a.sort(key=lambda x: x[1])
 ```
-
 By default `sort` sorts lists of tuples in increasing order on the first element, but we can use `lambda` to specify the second element of each tuple as the key to sort on instead.
 
 ---
@@ -68,8 +65,9 @@ List comprehensions offer a neat and concise way of creating lists of elements i
 
 For example:
 
-`l = [x**2 for x in range(1,10) if x % 3 == 0]`
-
+```python
+l = [x**2 for x in range(1,10) if x % 3 == 0]
+```
 is the same as writing:
 ```python
 l = list()
@@ -77,24 +75,25 @@ for x in range(1,10):
     if x % 3 == 0:
         l.append(x**2)
 ```
-
 We can also achieve the same result using `map` and `filter` as follows:
-
-`filter(lambda x: x % 3 == 0, map(lambda x: x**2, range(1,10)))`
+```python
+filter(lambda x: x % 3 == 0, map(lambda x: x**2, range(1,10)))
+```
 However, this way of writing it is arguably less readable than if we used list comprehensions.
 
 The performance of `map` and `filter` v.s. using a list comprehension is comparable. There is a slight speed advantage for `map` if we are calling an already defined function on each element and a slight speed advantage for list comprehensions if we are evaluating an expression on each element. This may be because using `map` has the additional overhead of calling a `lambda` that returns the given expression, whereas the list comprehension simply evaluates the expression for each element.
 
 Set and dictionary comprehensions work pretty much the same way as list comprehensions. 
 For example, let's say that `colors` is a list of strings of color names (with duplicates). Then, to count up the frequencies of each color, we can perform a dictionary comprehension as follows:
-
-`freq = {color: colors.count(color) for color in set(colors)}`
-
+```python
+freq = {color: colors.count(color) for color in set(colors)}
+```
 Here we want to iterate over the unique values in `colors` so we convert it into a set in the above.
 
 As an example of a set comprehension, we can find all (unique) primes up to 100:
-
-`primes = {x for x in range(2, 101) if all(x % y for y in range(2, x))}`
+```python
+primes = {x for x in range(2, 101) if all(x % y for y in range(2, x))}
+```
 
 ---
 
