@@ -31,6 +31,7 @@ Here, we convert the string called "string" into a list of characters and sort t
 Sets on the other hand are nice when all we care about is checking whether we have a certain element or not (ignoring duplicates). Say we have a long list of words named `l` and we want to check if the word "swallow" is contained in `l`. We can do for example:
 `s = set(l)`
 `"swallow" in s`
+
 Once we dump the entire list into a set, we can easily check whether it contains a given element or not.
 
 ---
@@ -44,6 +45,7 @@ For example:
 `a = [(2, 3), (6, 7), (3, 34), (24, 64), (1, 43)]`
 `a.sort(key=lambda x: x[1])`
 By default `sort` sorts lists of tuples in increasing order on the first element, but we can use `lambda` to specify the second element of each tuple as the key to sort on instead.
+
 ---
 
 ###Q4. List Comprehension, Map &amp; Filter
@@ -73,6 +75,7 @@ Here we want to iterate over the unique values in `colors` so we convert it into
 
 As an example of a set comprehension, we can find all (unique) primes up to 100:
 `primes = {x for x in range(2, 101) if all(x % y for y in range(2, x))}`
+
 ---
 
 ###Complete the following problems by editing the files below:
