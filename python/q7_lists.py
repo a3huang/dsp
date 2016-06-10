@@ -1,7 +1,6 @@
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 
-
 def match_ends(words):
     """
     Given a list of strings, return the count of the number of strings
@@ -15,7 +14,7 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+    return len([s for s in words if len(s) >= 2 and s[0] == s[len(s)-1]])
 
 
 def front_x(words):
@@ -32,7 +31,13 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
+    t = list()
+    for s in words:
+        if s[0] == 'x':
+          t.append((0,s))
+        else:
+          t.append((1,s))
+    return [w for i,w in sorted(t)]
 
 
 def sort_last(tuples):
@@ -49,7 +54,7 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
+    return sorted(tuples, key=lambda x: x[len(x)-1])
 
 
 def remove_adjacent(nums):
@@ -68,8 +73,19 @@ def remove_adjacent(nums):
     >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
-
+    res = []
+    if len(nums) == 0:
+        return res
+    
+    for i in range(len(nums)-1):
+        if nums[i] == nums[i+1]:
+            continue
+        else:
+            res.append(nums[i])
+    
+    # taking care of last element
+    res.append(nums[-1])
+    return res            
 
 def linear_merge(list1, list2):
     """
@@ -85,4 +101,21 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+    i = 0
+    j = 0
+    res = []
+    while i < len(list1) and j < len(list2):
+        if list1[i] <= list2[j]:
+            res.append(list1[i])
+            i += 1
+        elif list1[i] > list2[j]:
+            res.append(list2[j])
+            j += 1
+    
+    if i != len(list1):
+        res.extend(list1[i:])
+    elif j != len(list2):
+        res.extend(list2[j:])
+   
+    return res
+
