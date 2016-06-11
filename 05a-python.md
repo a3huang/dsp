@@ -41,14 +41,21 @@ Here we wish to flatten the dictionary which maps people to their list of friend
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
-Python's `lambda` can be used to create anonymous functions. If it's for something we're probably going to use only once, rather than going out of our way to define a named function for it, we can just create a "disposable" function using `lambda`. One of the most common uses of `lambda` is to create "key" functions for `sort`.
-
-For example:
+Python's `lambda` can be used to create anonymous functions. If we're only going to use it once, rather than going through the trouble of naming and defining a new function, we can just use `lambda` to create a function inline. One of the most common uses of `lambda` is to create "key" functions for the method `sort`. For example, we can write:
 ```python
 a = [(2, 3), (6, 7), (3, 34), (24, 64), (1, 43)]
 a.sort(key=lambda x: x[1])
 ```
-By default `sort` sorts lists of tuples in increasing order on the first element, but we can use `lambda` to specify the second element of each tuple as the key to sort on instead.
+By default the `sort` method sorts lists of tuples in increasing order on the first element, but we can use `lambda` to create a function that specifies the second element of each tuple as the key to sort on instead.
+
+We could have achieved the same result with regular good 'ol functions like so:
+```python
+def get2(x):
+    return x[1]
+
+a.sort(key=get2)
+```
+However, as noted earlier, it's a bit of a waste to define a function that we're never going to use anywhere else in the code. Using `lambda` just makes things cleaner and more concise.
 
 ---
 
@@ -56,10 +63,7 @@ By default `sort` sorts lists of tuples in increasing order on the first element
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
-List comprehensions offer a neat and concise way of creating lists of elements in a single statement.
-
-For example:
-
+List comprehensions offer a neat and concise way of creating lists of elements in a single statement. For example, writing:
 ```python
 l = [x**2 for x in range(1,10) if x % 3 == 0]
 ```
@@ -74,18 +78,18 @@ We can also achieve the same result using `map` and `filter` as follows:
 ```python
 filter(lambda x: x % 3 == 0, map(lambda x: x**2, range(1,10)))
 ```
-However, this way of writing it is arguably less readable than if we used list comprehensions.
+However, this way of writing it is arguably less readable than the previous two examples.
 
-The performance of `map` and `filter` v.s. using a list comprehension is comparable. There is a slight speed advantage for `map` if we are calling an already defined function on each element and a slight speed advantage for list comprehensions if we are evaluating an expression on each element. This may be because using `map` has the additional overhead of calling a `lambda` that returns the given expression, whereas the list comprehension simply evaluates the expression for each element.
+The performance of `map` and `filter` v.s. using a list comprehension is pretty comparable. There is a slight speed advantage for `map` if we are calling an already defined function on each element and a slight speed advantage for list comprehensions if we are evaluating an expression on each element. This may be because `map` has the additional overhead of calling a `lambda` that returns the given expression, whereas list comprehensions simply evaluate the expression for each element. In any case, since their performances are pretty similar, I prefer writing list comprehensions because in most cases they are easier to read.
 
-Set and dictionary comprehensions work pretty much the same way as list comprehensions. 
-For example, let's say that `colors` is a list of strings of color names (with duplicates). Then, to count up the frequencies of each color, we can perform a dictionary comprehension as follows:
+Set and dictionary comprehensions work pretty much in the same way as list comprehensions do. As an example, we can use a dictionary comprehension to count up frequencies as follows:
 ```python
+colors = ['purple', 'red', 'red', 'yellow', 'green', 'yellow', 'brown', 'purple', 'yellow', 'red']
 freq = {color: colors.count(color) for color in set(colors)}
 ```
 Here we want to iterate over the unique values in `colors` so we convert it into a set in the above.
 
-As an example of a set comprehension, we can find all (unique) primes up to 100:
+As an example of a set comprehension, we can find all unique primes up to 100:
 ```python
 primes = {x for x in range(2, 101) if all(x % y for y in range(2, x))}
 ```
