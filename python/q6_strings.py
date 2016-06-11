@@ -1,5 +1,6 @@
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
+
 import string
 
 def donuts(count):
@@ -18,6 +19,7 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
+    
     if count < 10:
         return 'Number of donuts: %d' % count
     else:
@@ -39,6 +41,7 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
+    
     if len(s) < 2:
         return ''
     else:
@@ -60,6 +63,7 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
+    
     start = s[0]
     rest = s.translate(string.maketrans(start,'*'))[1:]
     return start + rest
@@ -95,6 +99,7 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
+    
     if len(s) >= 3:
         if s[-3:] == "ing":
             return s + "ly"
@@ -120,6 +125,7 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
+    
     try:
         not_ind = s.index("not")
         bad_ind = s.index("bad")
@@ -147,6 +153,7 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
+    
     def mid(s):
         if len(s) % 2 == 0:
             return len(s)/2
