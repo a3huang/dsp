@@ -6,10 +6,10 @@
 
 res = []
 with open('football.csv') as f:
-    f.readline()
+    f.readline() # ignore the header row
     for line in f:
         data  = line.strip().split(',')
-        name,for_goal, against_goal = data[0],data[5],data[6]
+        name,for_goal,against_goal = data[0],data[5],data[6]
         diff = abs(int(against_goal) - int(for_goal))
         res.append((diff,name))
 
