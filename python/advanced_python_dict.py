@@ -18,7 +18,9 @@ with open('faculty.csv') as f:
     faculty_dict[lastname].append([degree, title, email])
     professor_dict[(firstname, lastname)].extend([degree, title, email])
 
-result = sorted([(i,a) for i,a in faculty_dict.items()], key=lambda x: x[0][1])
+result = sorted([(i,a) for i,a in professor_dict.items()], key=lambda x: x[0][1])
 
-for i in result[:3]:
-  print str(i[0]) + " : " + str(i[1][0])
+for i in result:
+  print i
+#print faculty_dict.items()[:3]
+#print professor_dict.items()[:3]
