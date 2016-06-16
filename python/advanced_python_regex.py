@@ -29,6 +29,6 @@ with open('faculty.csv') as f:
 if __name__ == '__main__':
   print Counter(degrees)
   print Counter(titles)
-  # print email
+  print email
   print domains
   print lastnames
