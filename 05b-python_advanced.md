@@ -1,6 +1,6 @@
 ## Advanced Python    
 
-###Regular Expressions, Dictionary, Writing to CSV Fil
+###Regular Expressions, Dictionary, Writing to CSV File
 
 This question has multiple parts, and will take **20+ hours** to complete, depending on your python proficiency level.  Knowing these skills will be extremely beneficial during the first few weeks of the bootcamp.
 
