@@ -7,3 +7,27 @@ Note that in the biased histogram, we find 0 households with 0 children under 18
 ![alt text](https://github.com/a3huang/dsp/blob/master/img/figure_1.png "Figure 1")
 
 We calculate that the mean of the unbiased distribution is about 1.02 and the mean of the biased distribution is about 2.40. Thus, the seemingly harmless procedure of interviewing random individuals has given us a mean more than two times larger than the true mean! Ignoring this subtlety is what seems to produce the so called "class size paradox".
+
+#### Python Code:
+```python
+import chap01soln
+import matplotlib.pyplot as plt
+import numpy as np
+
+data = chap01soln.ReadFemResp()
+
+plt.subplot(1,2,1)
+ax1 = data.numkdhh.hist(bins=range(7), normed=True)
+ax1.set_title("Unbiased Histogram")
+ax1.set_xlabel("Number of Children Under 18")
+
+plt.subplot(1,2,2)
+ax2 = data.numkdhh.hist(bins=range(7), normed=True, weights=data.numkdhh)
+ax2.set_title("Biased Histogram")
+ax2.set_xlabel("Number of Children Under 18")
+
+plt.show()
+
+print data.numkdhh.mean() # 1.024205155043831                                   
+print np.average(data.numkdhh, weights=data.numkdhh) # 2.4036791006642821  
+```
