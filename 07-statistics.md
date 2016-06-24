@@ -84,6 +84,8 @@ Frequentist and Bayesian statistics differ in their interpretation of probabilit
 
 Bayesians on the other hand interpret probabilities as the subjective belief that a certain event will happen. In our weather example, we can interpret the 40% not as a limiting relative frequency, but as a subjective degree of belief of the event of rain. The higher the degree of belief, the more confident one is about there being rain that day. The central idea in Bayesian statistics is that of coming up with a prior belief and then updating that belief in light of new information. It is a very intuitive way of thinking as it closely matches our natural thought process in everyday life. Furthermore, while frequentist statistics tend to produce point estimates and confidence intervals, Bayesian statistics produces the entire posterior distribution, which is more useful if we intend to use that as the prior and update our new belief further with data.
 
+Speaking of confidence intervals, a very common misconception is that the population mean has a 95% probability of lying in its associated 95% confidence interval. We can interpret credible intervals in the Bayesian framework this way, but this is the wrong way of thinking in the frequentist framework. The 95% confidence level refers not to any individual confidence interval, but to the process of generating the confidence intervals themselves. In other words, the lower and upper bounds of a confidence interval are themselves random while the true population mean remains fixed. The only thing we can say in the frequentist point of view is that the true mean lies in its 95% confidence interval with a probability of 0 or 1. It's either in there or it's not.
+
 ---
 
 ###Optional Exercises
