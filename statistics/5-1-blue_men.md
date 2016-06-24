@@ -1,6 +1,6 @@
 [Think Stats Chapter 5 Exercise 1](http://greenteapress.com/thinkstats2/html/thinkstats2006.html#toc50) (blue men)
 
-Assuming the distribution of male heights is approximately normal, the percentage of the male population that have heights between 5'10'' and 6'1'' is about 34%.
+Assuming that the distribution of male heights is approximately normal, the percentage of the male population that have heights between 5'10'' and 6'1'' is about 34%.
 
 #### Python Code:
 ```python
