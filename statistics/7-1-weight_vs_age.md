@@ -24,7 +24,7 @@ data = data[data.int_age > 0]
 age_groups = data.groupby('int_age')['totalwgt_lb']
 
 ### calculate 25th, 50th, and 75th quantiles of birth weight for each age ###   
-# build up quantile matrix where each column is single curve  
+# build up quantile matrix where each column represents single curve  
 quantiles = np.zeros((len(age_groups), 3))
 for i, (val, grp) in enumerate(age_groups):
   quantiles[i, :] = grp.quantile(np.arange(.25, 1, .25), interpolation='nearest')
