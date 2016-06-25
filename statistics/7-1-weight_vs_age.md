@@ -27,8 +27,7 @@ age_groups = data.groupby('int_age')['totalwgt_lb']
 # build up quantile matrix where each column is single curve  
 quantiles = np.zeros((len(age_groups), 3))
 for i, (val, grp) in enumerate(age_groups):
-  quantiles[i, :] = grp.quantile(np.arange(.25, 1, .25),
-    interpolation='nearest')
+  quantiles[i, :] = grp.quantile(np.arange(.25, 1, .25), interpolation='nearest')
 
 # ignore ages which had too few observations                                    
 # corresponds to ages in [13, 41] inclusive                                     
@@ -38,8 +37,7 @@ quantiles = quantiles[3:-3]
 plt.figure(2)
 
 for i in range(3):
-  plt.plot(np.arange(13, 42) , quantiles[:, i],
-    label="%dth" % ((i+1)*25))
+  plt.plot(np.arange(13, 42) , quantiles[:, i], label="%dth" % ((i+1)*25))
 
 plt.legend(loc=2)
 plt.title("Quartiles of Birth Weight")
