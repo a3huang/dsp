@@ -4,7 +4,7 @@ From the scatter plot below, it seems like birth weight and mother's age are not
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/Scatter-7-1.png)
 
-From the quantile plots below, it seems like birth weight is very slightly increasing as mother's age increases. However, it is interesting to note that there seems to be a sudden dip in birth weights at around age 39.
+From the quantile plots below, it seems like birth weight is very slightly increasing as mother's age increases. However, it is interesting to note that there seems to be a sudden dip in birth weights at around age 39. After that, the birth weight goes back up again so that overall, the birth weight quantiles seem to be remain roughly constant on average with respect to age.
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/Quantiles-7-1.png)
 
