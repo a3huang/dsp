@@ -1,10 +1,10 @@
 [Think Stats Chapter 7 Exercise 1](http://greenteapress.com/thinkstats2/html/thinkstats2008.html#toc70) (weight vs. age)
 
-From the scatter plot below, it seems like birth weight and mother's age are not correlated. There doesn't seem to be any obvious sign of a positive or negative correlation between the two variables. Furthermore, we find the Pearson and Spearman correlation coefficients to be 0.0688 and 0.0946 respectively. Both correlation coefficients are quite small, which supports our observation based on the scatter plot.
+From the scatter plot below, it seems like birth weight and mother's age are not correlated. There doesn't seem to be any obvious sign of a positive or negative correlation between the two. Furthermore, we find the Pearson and Spearman correlation coefficients to be 0.0688 and 0.0946 respectively. Both correlation coefficients are very small, which supports our visual observation that the two variables are not correlated.
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/Scatter-7-1.png)
 
-age 39 seems to have quite a few low weight babies
+From the quantile plots below, it seems like birth weight is very slightly increasing as mother's age increases. However, it is interesting to note that there seems to be a sudden dip in birth weights at around age 39.
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/Quantiles-7-1.png)
 
