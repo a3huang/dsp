@@ -16,8 +16,7 @@ data = data[data.outcome == 1] # only consider live births
 
 ### scatterplot of birth weight and mother's age ###                            
 ax = data.plot(kind='scatter', x='agepreg', y='totalwgt_lb', alpha=0.2)
-ax.set_title("Scatterplot of Birth Weight v.s. Mother's Age", fontsize=18,
-    fontweight='bold', y=1.01)
+ax.set_title("Scatterplot of Birth Weight v.s. Mother's Age", fontsize=18, fontweight='bold', y=1.01)
 ax.set_xlabel('Age at Pregnancy (years)')
 ax.set_ylabel('Birth Weight (lbs)')
 plt.xticks(y=-.01)
@@ -46,8 +45,7 @@ for i in range(3):
   plt.plot(np.arange(13, 42) , quantiles[:, i], label="%dth" % ((i+1)*25))
 
 plt.legend(loc=2)
-plt.title("Quartiles of Birth Weight", fontsize=18, fontweight='bold',
-  y=1.01)
+plt.title("Quartiles of Birth Weight", fontsize=18, fontweight='bold', y=1.01)
 plt.xlabel("Age at Pregnancy (years)")
 plt.ylabel("Birth Weight (lbs)")
 plt.xticks(y=-.01)
