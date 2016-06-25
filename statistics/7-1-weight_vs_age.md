@@ -20,7 +20,8 @@ ax.set_title("Scatterplot of Birth Weight v.s. Mother's Age", fontsize=18, fontw
 ax.set_xlabel('Age at Pregnancy (years)')
 ax.set_ylabel('Birth Weight (lbs)')
 plt.xticks(y=-.01)
-plt.yticks(np.arange(-5, 20, 5), x=-.01)
+plt.yticks(np.arange(-2, 20, 2), x=-.01)
+plt.axis([5, 50, -2, 20])
 plt.savefig('Scatter-7-1')
 
 ### group birth weight according to integer part of mother's age ###            
