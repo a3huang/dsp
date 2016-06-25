@@ -1,6 +1,8 @@
 [Think Stats Chapter 7 Exercise 1](http://greenteapress.com/thinkstats2/html/thinkstats2008.html#toc70) (weight vs. age)
 
-age 39 seems to have quite a few low weight babies   
+age 39 seems to have quite a few low weight babies  
+
+!(https://github.com/a3huang/dsp/blob/master/img/Quantiles-7-1.png)
 
 #### Python Code:
 ```python
