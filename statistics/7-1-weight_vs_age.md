@@ -2,7 +2,8 @@
 
 age 39 seems to have quite a few low weight babies  
 
-!(https://github.com/a3huang/dsp/blob/master/img/Quantiles-7-1.png)
+![alt-text](https://github.com/a3huang/dsp/blob/master/img/Quantiles-7-1.png)
+![alt-text](https://github.com/a3huang/dsp/blob/master/img/Scatter-7-1.png)
 
 #### Python Code:
 ```python
