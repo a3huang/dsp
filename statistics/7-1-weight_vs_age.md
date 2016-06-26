@@ -1,6 +1,6 @@
 [Think Stats Chapter 7 Exercise 1](http://greenteapress.com/thinkstats2/html/thinkstats2008.html#toc70) (weight vs. age)
 
-From the scatter plot below, it seems like birth weight and mother's age are not correlated. There doesn't seem to be any obvious sign of a positive or negative correlation between the two. Furthermore, we find the Pearson and Spearman correlation coefficients to be 0.0688 and 0.0946 respectively. Both correlation coefficients are very small, which supports our visual observation that the two variables are not correlated.
+From the scatterplot below, it seems like birth weight and mother's age are not correlated since there doesn't seem to be any obvious sign of a positive or negative correlation between the two. Furthermore, we find the Pearson and Spearman correlation coefficients to be 0.0688 and 0.0946 respectively. Both correlation coefficients are small, which supports our conclusion from looking at the scatterplot that the two variables are not correlated.
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/Scatter-7-1.png)
 
