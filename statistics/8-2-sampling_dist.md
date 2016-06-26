@@ -31,7 +31,6 @@ for i in range(1,6):
   print '90%% Confidence Interval for L w/ Sample Size %d: (%f, %f)' % \
     (10**i, confint[0], confint[1])
 
-
 plt.figure()
 plt.plot(range(1,6), stderrors)
 plt.title('Standard Errors of L', fontsize=18, fontweight='bold', y=1.01)
