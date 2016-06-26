@@ -26,7 +26,11 @@ def Estimate_L(n):
 stderrors = list()
 for i in range(1,6):
   plt.figure()
-  stderrors.append(Estimate_L(10**i)[0])
+  error, confint = Estimate_L(10**i)
+  stderrors.append(error)
+  print '90%% Confidence Interval for L w/ Sample Size %d: (%f, %f)' % \
+    (10**i, confint[0], confint[1])
+
 
 plt.figure()
 plt.plot(range(1,6), stderrors)
