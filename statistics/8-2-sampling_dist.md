@@ -14,13 +14,13 @@ The histograms of L for each of these sample sizes are shown below:
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist_all.png)
 
+Since L is the MLE of <img src="http://latex.codecogs.com/svg.latex?\lambda" title="\lambda" />, by asymptotic theory we have for large n that:
+
+<img src="http://latex.codecogs.com/svg.latex?L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" title="L \sim N(\lambda, n^{-1} I^{-1})" />
+
+In other words, the MLE is asymptotically normal with mean being the true value of <img src="http://latex.codecogs.com/svg.latex?\lambda" title="\lambda" /> and variance of order O(1/n). This is apparent in the above histograms where we can see that the distribution centers on the true value 2 for large n. We can also see from the histograms that the variance decreases with n as the distribution concentrates more tightly around 2 for large n.
+
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/StdError-8-2.png)
-
-Since L is the MLE of <img src="http://latex.codecogs.com/svg.latex?\lambda" title="\lambda" />, by asymptotic theory, we have for large <img src="http://latex.codecogs.com/svg.latex?n" title="n" /> that <img src="http://latex.codecogs.com/svg.latex?L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" title="L \sim N(\lambda, n^{-1} I^{-1})" />
-
-MLE is asymptotically normal, stderror has order O(1/n)                       
-centers around 2, as expected of asymptotic behavior of MLE                   
-lambda_hat ~ N(lambda, n^{-1} * I^{-1})  
 
 #### Python Code:
 ```python
