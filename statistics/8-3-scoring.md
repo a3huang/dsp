@@ -1,12 +1,24 @@
 [Think Stats Chapter 8 Exercise 3](http://greenteapress.com/thinkstats2/html/thinkstats2009.html#toc77)
 
+if lam is low, it will remain biased even for large n                         
+if lam is 100, large n 10000 will make the mean 100                           
+
+stderror: sqrt(lambda), constant in n                                         
+rsme: sqrt(lambda), constant in n                                             
+mean error (bias): constant in n, constant in lambda = 2?                     
+
+increasing n will make distribution more symmetric                            
+
+for small lam, even with high n (10000), distribution will be biased          
+distribution will be unbiased for lam > 80    
+
 #### Python Code:
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 
-# lam: goals per game                                                           
-# returns sample estimate of lam                                                
+# lam: goals per game                                       
+# returns a sample estimate of lam
 def game(lam):
   time_ints = list()
   while sum(time_ints) <= 1:
@@ -17,14 +29,14 @@ def sim(n, lam=10):
   results = list()
   for i in range(n):
     results.append(game(lam))
+  
   plt.hist(results)
-  #plt.show()                                                                   
-  confint = np.percentile(results, [5, 95])
+  plt.savfig('hist-8-3')
+  bias = np.mean(results) - lam
+  rmse = np.sqrt(np.mean([(result-lam)**2 for result in results]))
   stderror = np.std(results)
-  mean_err = np.mean([result-lam for result in results])
-  mse = np.mean([(result-lam)**2 for result in results])
-  rmse = np.sqrt(mse)
-  print '%.2f %.2f %.2f (%.2f, %.2f)' % (mean_err, rmse, stderror, confint[0], confint[1])
+  confint = np.percentile(results, [5, 95])
+  print '%.2f %.2f %.2f (%.2f, %.2f)' % (bias, rmse, stderror, confint[0], confint[1])
 
 for i in range(100, 1000, 100):
   sim(10000, i)
