@@ -1,8 +1,8 @@
 [Think Stats Chapter 8 Exercise 3](http://greenteapress.com/thinkstats2/html/thinkstats2009.html#toc77)
 
 
-|:Bias:|:RMSE:|:Standard Error:|:90% Confidence Interval:|
-|---|---|---|---|
+|Bias|RMSE|Standard Error|90% Confidence Interval|
+|:---:|:---:|:---:|:---:|
 |2.01|10.33|10.13|(85.00, 119.00)|
 
 
