@@ -36,6 +36,7 @@ def sim(n, lam=10):
   rmse = np.sqrt(np.mean([(result-lam)**2 for result in results]))
   stderror = np.std(results)
   confint = np.percentile(results, [5, 95])
+  
   print '%.2f %.2f %.2f (%.2f, %.2f)' % (bias, rmse, stderror, confint[0], confint[1])
 
 for i in range(100, 1000, 100):
