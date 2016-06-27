@@ -20,7 +20,7 @@ The histograms of L for each of these sample sizes are shown below:
 
 Since L is the MLE of \lambda, by asymptotic theory, we have for large *n* that:
 
-<a href="http://www.codecogs.com/eqnedit.php?latex=L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" target="_blank"><img src="http://latex.codecogs.com/gif.latex?L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" title="L \sim N(\lambda, n^{-1} I^{-1})" /></a>
+<img src="http://latex.codecogs.com/svg.latex?L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" title="L \sim N(\lambda, n^{-1} I^{-1})" />
 
 MLE is asymptotically normal, stderror has order O(1/n)                       
 centers around 2, as expected of asymptotic behavior of MLE                   
