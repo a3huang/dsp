@@ -10,11 +10,11 @@ The results for several sample sizes are shown below:
 |10000|0.019660 |(1.968973, 2.032203)| 
 |100000 |0.006327 |(1.990008, 2.010539)|
 
-The histograms of L for each of these sample sizes are shown below:
+The histograms of the estimator L for each of the above sample sizes are shown below:
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist_all.png)
 
-Since L is the MLE of lambda, by asymptotic theory we have for large n that:
+Since L is the MLE of lambda, by asymptotic theory we have the following for large n:
 
 <img src="http://latex.codecogs.com/svg.latex?L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" title="L \sim N(\lambda, n^{-1} I^{-1})" />
 
