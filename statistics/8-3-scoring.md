@@ -36,7 +36,7 @@ We see that as n increases, the values of bias, RMSE, and standard error seem to
 |1000|1.25|31.88|31.85|(951.00, 1054.05)|
 |10000|1.62|100.84|100.82|(9833.00, 10165.10)|
 
-Here we see that while the bias takes on roughly the same values for each lambda, the RMSE and standard error seem to be roughly proportional to the square root of lambda. Thus, unlike the case with the MLE, the standard error of this estimator remains roughly constant with respect to sample size and varies with the square root of the true goal scoring rate.
+Here we see that while the bias takes on roughly the same values for each lambda, the RMSE and standard error seem to be roughly proportional to the square root of lambda. Thus, unlike the case with the MLE, the standard error of this estimator remains roughly constant with respect to sample size, but varies with the square root of the true goal scoring rate. Of course, we don't expect 10, let alone 10,000 goals to be scored in an average soccer game, but it is interesting nevertheless to investigate the properties of this estimator of lambda. Comparing this to problem 8-2, we can see that the MLE is a far superior estimator even for small values of n due to its much smaller values of standard error and the independece of the standard error from the true value of lambda.
 
 #### Python Code:
 ```python
