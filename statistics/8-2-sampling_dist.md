@@ -1,15 +1,16 @@
 [Think Stats Chapter 8 Exercise 2](http://greenteapress.com/thinkstats2/html/thinkstats2009.html#toc77) (scoring)
 
+The results are shown below where the first column is the sample size, the second is the standard error, and the third is the 90% confidence interval:
+
+10     0.751612 (1.283413, 3.741700)  
+100    0.202648 (1.712411, 2.362234)  
+1000   0.062765 (1.906998, 2.109332)  
+10000  0.019660 (1.968973, 2.032203)  
+100000 0.006327 (1.990008, 2.010539)
 
 MLE is asymptotically normal, stderror has order O(1/n)                       
 centers around 2, as expected of asymptotic behavior of MLE                   
 lambda_hat ~ N(lambda, n^{-1} * I^{-1})  
-
-10 0.751612 (1.283413, 3.741700)  
-100 0.202648 (1.712411, 2.362234)  
-1000 0.062765 (1.906998, 2.109332)  
-10000 0.019660 (1.968973, 2.032203)  
-100000 0.006327 (1.990008, 2.010539)  
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist_all.png)
 
