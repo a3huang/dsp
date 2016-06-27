@@ -11,7 +11,6 @@ The results for several sample sizes are shown below:
 |100000 |0.006327 |(1.990008, 2.010539)|
 
 The histograms of the estimator L for each of the above sample sizes are shown below:
-
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist_all.png)
 
 Since L is the MLE of lambda, by asymptotic theory we approximately have the following for large n:
