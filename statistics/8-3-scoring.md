@@ -36,16 +36,7 @@ We see that as n increases, the values of bias, RMSE, and standard error seem to
 |1000|1.25|31.88|31.85|(951.00, 1054.05)|
 |10000|1.62|100.84|100.82|(9833.00, 10165.10)|
 
-
-
-if lam is low, it will remain biased even for large n                         
-if lam is 100, large n 10000 will make the mean 100                           
-
-stderror: sqrt(lambda), constant in n                                         
-rmse: sqrt(lambda), constant in n                                             
-mean error (bias): constant in n, constant in lambda = 2?                     
-
-increasing n will make distribution more symmetric
+Here we see that while the bias takes on roughly the same values for each lambda, the RMSE and standard error seem to be roughly proportional to the square root of lambda. Thus, unlike the case with the MLE, the standard error of this estimator remains roughly constant with respect to sample size and varies with the square root of the true goal scoring rate.
 
 #### Python Code:
 ```python
@@ -66,6 +57,11 @@ def sim(n, lam=10):
     results.append(game(lam))
   
   plt.hist(results)
+  plt.title('Histogram for lam = %d, n = %d' % (lam, n), fontsize=18, fontweight='bold', y=1.01)
+  plt.xlabel('Estimated Values of Rate')
+  plt.ylabel('Frequency')
+  plt.xticks(y=-.01)
+  plt.yticks(x=-.01)
   plt.savfig('hist-8-3')
   bias = np.mean(results) - lam
   rmse = np.sqrt(np.mean([(result-lam)**2 for result in results]))
@@ -73,7 +69,4 @@ def sim(n, lam=10):
   confint = np.percentile(results, [5, 95])
   
   print '%.2f %.2f %.2f (%.2f, %.2f)' % (bias, rmse, stderror, confint[0], confint[1])
-
-for i in range(100, 1000, 100):
-  sim(10000, i)
 ```
