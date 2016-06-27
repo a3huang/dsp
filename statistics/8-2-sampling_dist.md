@@ -16,7 +16,7 @@ The histograms of L for each of these sample sizes are shown below:
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/StdError-8-2.png)
 
-By asymptotic theory, we have for large *n* that:
+Since L is the MLE of \lambda, by asymptotic theory, we have for large *n* that:
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" target="_blank"><img src="http://latex.codecogs.com/gif.latex?L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" title="L \sim N(\lambda, n^{-1} I^{-1})" /></a>
 
