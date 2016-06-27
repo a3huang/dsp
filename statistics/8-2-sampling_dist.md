@@ -10,13 +10,18 @@ The results for several sample sizes are shown below:
 |10000|0.019660 |(1.968973, 2.032203)| 
 |100000 |0.006327 |(1.990008, 2.010539)|
 
-MLE is asymptotically normal, stderror has order O(1/n)                       
-centers around 2, as expected of asymptotic behavior of MLE                   
-lambda_hat ~ N(lambda, n^{-1} * I^{-1})  
+The histograms of L for each of these sample sizes are shown below:
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist_all.png)
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/StdError-8-2.png)
+
+By asymptotic theory, we have that 
+<a href="http://www.codecogs.com/eqnedit.php?latex=L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" target="_blank"><img src="http://latex.codecogs.com/gif.latex?L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" title="L \sim N(\lambda, n^{-1} I^{-1})" /></a>
+
+MLE is asymptotically normal, stderror has order O(1/n)                       
+centers around 2, as expected of asymptotic behavior of MLE                   
+lambda_hat ~ N(lambda, n^{-1} * I^{-1})  
 
 #### Python Code:
 ```python
