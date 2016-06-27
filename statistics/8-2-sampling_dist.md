@@ -11,6 +11,8 @@ lambda_hat ~ N(lambda, n^{-1} * I^{-1})
 10000 0.019660 (1.968973, 2.032203)  
 100000 0.006327 (1.990008, 2.010539)  
 
+![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist_all.png)
+
 #### Python Code:
 ```python
 import numpy as np
