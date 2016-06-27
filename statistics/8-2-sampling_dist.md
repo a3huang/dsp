@@ -1,7 +1,5 @@
 [Think Stats Chapter 8 Exercise 2](http://greenteapress.com/thinkstats2/html/thinkstats2009.html#toc77) (scoring)
 
-<img src="https://latex.codecogs.com/svg.latex?{urlmathcode}" alt="{mathcode}">
-
 The results for several sample sizes are shown below:
 
 | Sample Size | Standard Error | 90% Confidence Interval |
@@ -18,7 +16,7 @@ The histograms of L for each of these sample sizes are shown below:
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/StdError-8-2.png)
 
-Since L is the MLE of \lambda, by asymptotic theory, we have for large *n* that:
+Since L is the MLE of <img src="http://latex.codecogs.com/svg.latex?\lambda" title="\lambda" />, by asymptotic theory, we have for large *n* that:
 
 <img src="http://latex.codecogs.com/svg.latex?L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" title="L \sim N(\lambda, n^{-1} I^{-1})" />
 
