@@ -63,10 +63,10 @@ def sim(n, lam=10):
   plt.xticks(y=-.01)
   plt.yticks(x=-.01)
   plt.savfig('hist-8-3')
+  
   bias = np.mean(results) - lam
   rmse = np.sqrt(np.mean([(result-lam)**2 for result in results]))
   stderror = np.std(results)
   confint = np.percentile(results, [5, 95])
-  
   print '%.2f %.2f %.2f (%.2f, %.2f)' % (bias, rmse, stderror, confint[0], confint[1])
 ```
