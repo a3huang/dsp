@@ -1,5 +1,7 @@
 [Think Stats Chapter 8 Exercise 2](http://greenteapress.com/thinkstats2/html/thinkstats2009.html#toc77) (scoring)
 
+<img src="https://latex.codecogs.com/svg.latex?{urlmathcode}" alt="{mathcode}">
+
 The results for several sample sizes are shown below:
 
 | Sample Size | Standard Error | 90% Confidence Interval |
