@@ -13,12 +13,10 @@ Below is the accompanying histogram for these results.
 
 As we can see, despite the large sample size, the histogram is skewed and there is a clear bias as it tends to overestimate the true scoring rate of 4. We can also see this from the mean error (or bias), which has a value of 2. This tells us that on average (out of 10,000 trials) the estimated scoring rate overestimates the true scoring rate by 2.
 
-It is interesting to note that with small values of lambda, the histograms of the estimates tend to be skewed, even for very large values of n. However, once lambda gets large enough (at about 80), increasing n tends to make the histograms more symmetric.
+It is interesting to note that for small values of lambda, the histograms of the estimates tend to be skewed, even for very large values of n. However, once lambda gets large enough (at about 80), increasing n tends to make the histograms look more symmetric.
 
 Below is a histogram for a sample size of 10,000 and a lambda of 100.
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist2-8-3.png)
-
-
 
 The following table presents results for several sample sizes, while keeping lam = 100 constant.
 
@@ -29,6 +27,17 @@ The following table presents results for several sample sizes, while keeping lam
 |1000|1.62|10.16|10.03|(86.00, 118.00)|
 |10000|1.88|10.15|9.97|(86.00, 118.00)|
 |100000|1.99|10.17|9.97|(86.00, 119.00)|
+
+We see that as n increases, the values of bias, RMSE, and standard error seem to remain largely the same. In contrast, if we hold n = 10,000 constant and vary lambda, we get the following results:
+
+|Lambda|Bias|RMSE|Standard Error|90% Confidence Interval|
+|:---|:---:|:---:|:---:|:---:|
+|10|1.91|3.66|3.13|(7.00, 18.00)|
+|100||2.24|10.54|10.30|(86.00, 119.00)|
+|1000|1.25|31.88|31.85|(951.00, 1054.05)|
+|10000|1.62|100.84|100.82|(9833.00, 10165.10)|
+
+
 
 if lam is low, it will remain biased even for large n                         
 if lam is 100, large n 10000 will make the mean 100                           
