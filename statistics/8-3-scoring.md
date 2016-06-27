@@ -10,6 +10,8 @@ Below is the accompanying histogram for these results.
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist-8-3.png)
 
+As we can see, despite the large sample size, the histogram is skewed and there is a clear bias as it tends to overestimate the true scoring rate of 4. We can also see this from the mean error (or bias), which has a value of 2. This tells us that on average (out of 10,000 trials) the estimated scoring rate overestimates the true scoring rate by 2.
+
 The following table presents results for several sample sizes, while keeping lam = 100 constant.
 
 |Sample Size|Bias|RMSE|Standard Error|90% Confidence Interval|
