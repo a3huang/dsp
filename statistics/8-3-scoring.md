@@ -6,6 +6,10 @@ For soccer, the average number of goals scored per game is usually around 3 to 5
 |:---:|:---:|:---:|:---:|
 |2.00|2.85|2.02|(3.00, 10.00)|
 
+Below is the accompanying histogram for these results.
+
+![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist-8-3.png)
+
 The following table presents results for several sample sizes, while keeping lam = 100 constant.
 
 |Sample Size|Bias|RMSE|Standard Error|90% Confidence Interval|
