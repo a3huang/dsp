@@ -1,8 +1,11 @@
 [Think Stats Chapter 7 Exercise 1](http://greenteapress.com/thinkstats2/html/thinkstats2008.html#toc70) (weight vs. age)
 
-age 39 seems to have quite a few low weight babies  
+From the scatterplot below, it seems like birth weight and mother's age are not correlated since there doesn't seem to be any obvious sign of a positive or negative correlation between the two. Furthermore, we find the Pearson and Spearman correlation coefficients to be 0.0688 and 0.0946 respectively. Both correlation coefficients are small, which supports our conclusion from looking at the scatterplot that the two variables are not correlated.
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/Scatter-7-1.png)
+
+To produce the plots of the 25th, 50th, and 75th quantiles, we group birth weights in the data set based on the integer part of the mother's age. We chose to plot the quantiles for mothers in the age range between 13 and 41, as ages outside of this range had less than 3 observations each. From the quantile plots below, it seems like birth weight is very slightly increasing with mothers' age. We also see a noticeable dip in birth weight at around age 39. However, it seems strange that there would be a sudden dip at age 39 only to rebound again at age 40. We would expect that women 40 and older would continue the downward trend of birth weight since fertility decreases with age, but for some reason birth weight reverses its trend and increases back up starting at age 40. One possible reason for this discrepancy is that there are differing numbers of pregnant mothers within each age level. In particular, the number of 39 year old mothers is much smaller than the number of mothers in each of the age levels between 15 and 35. The number of mothers in the age levels 40 and older are even smaller. The unusual pattern in the plots tells us that we shouldn't trust the values of the sample quantiles near the extremes of our designated age range. In order to properly estimate the quantiles, we need to somehow obtain more data near the endpoints of our range so that all age levels contain roughly the same number of mothers. In any case, the middle section of each quantile plot seems to suggest that birth weight does increase with mother's age. However, we should be skeptical of this conclusion in light of what we observed with the scatterplot and coefficients of correlation earlier.
+
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/Quantiles-7-1.png)
 
 #### Python Code:
@@ -20,7 +23,8 @@ ax.set_title("Scatterplot of Birth Weight v.s. Mother's Age", fontsize=18, fontw
 ax.set_xlabel('Age at Pregnancy (years)')
 ax.set_ylabel('Birth Weight (lbs)')
 plt.xticks(y=-.01)
-plt.yticks(np.arange(-5, 20, 5), x=-.01)
+plt.yticks(np.arange(-2, 20, 2), x=-.01)
+plt.axis([5, 50, -2, 20])
 plt.savefig('Scatter-7-1')
 
 ### group birth weight according to integer part of mother's age ###            
