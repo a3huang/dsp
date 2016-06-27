@@ -26,14 +26,13 @@ The following table presents results for several sample sizes, while keeping lam
 |100|1.47|10.46|10.35|(85.95, 118.05)|
 |1000|1.62|10.16|10.03|(86.00, 118.00)|
 |10000|1.88|10.15|9.97|(86.00, 118.00)|
-|100000|1.99|10.17|9.97|(86.00, 119.00)|
 
 We see that as n increases, the values of bias, RMSE, and standard error seem to remain largely the same. In contrast, if we hold n = 10,000 constant and vary lambda, we get the following results:
 
 |Lambda|Bias|RMSE|Standard Error|90% Confidence Interval|
 |:---|:---:|:---:|:---:|:---:|
 |10|1.91|3.66|3.13|(7.00, 18.00)|
-|100||2.24|10.54|10.30|(86.00, 119.00)|
+|100|2.24|10.54|10.30|(86.00, 119.00)|
 |1000|1.25|31.88|31.85|(951.00, 1054.05)|
 |10000|1.62|100.84|100.82|(9833.00, 10165.10)|
 
