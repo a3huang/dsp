@@ -24,10 +24,8 @@ def sim(n, lam=10):
   mean_err = np.mean([result-lam for result in results])
   mse = np.mean([(result-lam)**2 for result in results])
   rmse = np.sqrt(mse)
-  print '%.2f %.2f %.2f (%.2f, %.2f)' % \
-  (mean_err, rmse, stderror, confint[0], confint[1])
+  print '%.2f %.2f %.2f (%.2f, %.2f)' % (mean_err, rmse, stderror, confint[0], confint[1])
 
-#print game(10)                                                                 
 for i in range(100, 1000, 100):
   sim(10000, i)
 ```
