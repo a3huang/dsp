@@ -13,6 +13,8 @@ lambda_hat ~ N(lambda, n^{-1} * I^{-1})
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist_all.png)
 
+![alt-text](https://github.com/a3huang/dsp/blob/master/img/StdError-8-2.png)
+
 #### Python Code:
 ```python
 import numpy as np
