@@ -1,16 +1,22 @@
 [Think Stats Chapter 8 Exercise 3](http://greenteapress.com/thinkstats2/html/thinkstats2009.html#toc77)
 
+To simulate a game, we generate appropriate random values from an exponential distribution until the sum of these "time intervals" exceed 1. We estimate the scoring rate by taking the number of time intervals between goals before the overall sum exceeds 1, and then adding 1 to it.
+
 For soccer, the average number of goals scored per game is usually around 3 to 5. Below are the results for a sample size of 10,000 and a scoring rate of 4 goals per game on average.
 
 |Bias|RMSE|Standard Error|90% Confidence Interval|
 |:---:|:---:|:---:|:---:|
-|2.00|2.85|2.02|(3.00, 10.00)|
+|2.00|2.82|1.98|(3.00, 9.00)|
 
 Below is the accompanying histogram for these results.
 
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist-8-3.png)
 
 As we can see, despite the large sample size, the histogram is skewed and there is a clear bias as it tends to overestimate the true scoring rate of 4. We can also see this from the mean error (or bias), which has a value of 2. This tells us that on average (out of 10,000 trials) the estimated scoring rate overestimates the true scoring rate by 2.
+
+It is interesting to note that with small values of lambda, the histograms of the estimates tend to be skewed, even for very large values of n. However, once lambda gets large enough (at about 80), increasing n tends to make the histograms more symmetric.
+
+Below is a histogram for a sample size of 10,000 and a lambda of 
 
 The following table presents results for several sample sizes, while keeping lam = 100 constant.
 
