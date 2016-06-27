@@ -1,5 +1,11 @@
 [Think Stats Chapter 8 Exercise 2](http://greenteapress.com/thinkstats2/html/thinkstats2009.html#toc77) (scoring)
 
+10 0.772059 (1.266820, 3.715689)
+100 0.207557 (1.706145, 2.395852)
+1000 0.061950 (1.899947, 2.102595)
+10000 0.020130 (1.968949, 2.034037)
+100000 0.006217 (1.990308, 2.009845)
+
 #### Python Code:
 ```python
 import numpy as np
