@@ -16,6 +16,8 @@ As we can see, despite the large sample size, the histogram is skewed and there 
 It is interesting to note that with small values of lambda, the histograms of the estimates tend to be skewed, even for very large values of n. However, once lambda gets large enough (at about 80), increasing n tends to make the histograms more symmetric.
 
 Below is a histogram for a sample size of 10,000 and a lambda of 100.
+![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist2-8-3.png)
+
 
 
 The following table presents results for several sample sizes, while keeping lam = 100 constant.
