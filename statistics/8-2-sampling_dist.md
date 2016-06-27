@@ -1,9 +1,9 @@
 [Think Stats Chapter 8 Exercise 2](http://greenteapress.com/thinkstats2/html/thinkstats2009.html#toc77) (scoring)
 
 
-# MLE is asymptotically normal, stderror has order O(1/n)                       
-# centers around 2, as expected of asymptotic behavior of MLE                   
-# lambda_hat ~ N(lambda, n^{-1} * I^{-1})  
+MLE is asymptotically normal, stderror has order O(1/n)                       
+centers around 2, as expected of asymptotic behavior of MLE                   
+lambda_hat ~ N(lambda, n^{-1} * I^{-1})  
 
 #### Python Code:
 ```python
