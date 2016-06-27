@@ -1,15 +1,26 @@
 [Think Stats Chapter 8 Exercise 2](http://greenteapress.com/thinkstats2/html/thinkstats2009.html#toc77) (scoring)
 
+The results for several sample sizes are shown below:
 
-MLE is asymptotically normal, stderror has order O(1/n)                       
-centers around 2, as expected of asymptotic behavior of MLE                   
-lambda_hat ~ N(lambda, n^{-1} * I^{-1})  
+| Sample Size | Standard Error | 90% Confidence Interval |
+|-------------|:----------------:|:-------------------------:|
+|10|0.751612 |(1.283413, 3.741700)|
+|100|0.202648 |(1.712411, 2.362234)| 
+|1000|0.062765 |(1.906998, 2.109332)| 
+|10000|0.019660 |(1.968973, 2.032203)| 
+|100000 |0.006327 |(1.990008, 2.010539)|
 
-10 0.751612 (1.283413, 3.741700)  
-100 0.202648 (1.712411, 2.362234)  
-1000 0.062765 (1.906998, 2.109332)  
-10000 0.019660 (1.968973, 2.032203)  
-100000 0.006327 (1.990008, 2.010539)  
+The histograms of the estimator L for each of the above sample sizes are shown below:
+![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist_all.png)
+
+Since L is the MLE of lambda, by asymptotic theory we approximately have the following for large n:
+
+<img src="http://latex.codecogs.com/svg.latex?L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" title="L \sim N(\lambda, n^{-1} I^{-1})" />
+
+In other words, the MLE is asymptotically normal with mean being the true value of lambda and variance of order O(1/n). This is apparent in the above histograms as we can see that the distribution centers around the true value of 2 for large n. We can also see that the variance decreases with n as the distribution narrows around 2 for large n.
+
+Below is the plot of empirical standard errors for L. As expected, the errors decrease as n gets larger.
+![alt-text](https://github.com/a3huang/dsp/blob/master/img/StdError-8-2.png)
 
 #### Python Code:
 ```python
