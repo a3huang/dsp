@@ -10,32 +10,38 @@
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mtick
 
 def Estimate_L(n):
   results = list()
   for i in range(1000):
     results.append(1/np.mean(np.random.exponential(scale=0.5, size=n)))
 
-  counts, bins, patches = plt.hist(results)
-  plt.title('Histogram of L for Sample Size: %d' % n, fontsize=18,
-    fontweight='bold', y=1.01)
-  plt.xlabel('L')
-  plt.ylabel('Frequency')
-  plt.xticks(y=-.01)
-  plt.xticks()[1][0].set_visible(False)
-  plt.xticks()[1][-1].set_visible(False)
-  plt.yticks(x=-.01)
-  plt.savefig('Histogram_%d' % n)
+  ax.hist(results)
+  ax.set_title('n = %d' % n, fontsize=14, fontweight='bold')
+  ax.set_xlabel('L')
+  ax.set_ylabel('Frequency')
+  ax.tick_params(axis='both', which='major', pad=8)
+  ax.set_xticklabels(ax.get_xticks().tolist(), ha='left')
+  ax.xaxis.set_major_formatter(mtick.FormatStrFormatter('%.2f'))
+  ax.locator_params(axis='x', nbins=6)
+  ax.locator_params(axis='y', nbins=6)
+  ax.xaxis.get_major_ticks()[-1].set_visible(False)
+  ax.yaxis.get_major_ticks()[-1].set_visible(False)
 
   return (np.std(results), np.percentile(results, [5, 95]))
 
+fig, ax = plt.subplots(3,2)
+fig.suptitle('Histograms of L', fontsize=18, fontweight='bold')
+ax = ax.flat
 stderrors = list()
 for i in range(1,6):
-  plt.figure()
-  error, confint = Estimate_L(10**i)
+  error, confint = Estimate_L(10**i, ax[i-1])
   stderrors.append(error)
-  print '90%% Confidence Interval for L w/ Sample Size %d: (%f, %f)' % \
-    (10**i, confint[0], confint[1])
+  print '%d %f (%f, %f)' % (10**i, error, confint[0], confint[1])
+fig.delaxes(ax[-1])
+plt.subplots_adjust(wspace=0.4, hspace=0.8)
+plt.show()
 
 plt.figure()
 plt.plot(range(1,6), stderrors)
