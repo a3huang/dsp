@@ -18,7 +18,7 @@ Since L is the MLE of <img src="http://latex.codecogs.com/svg.latex?\lambda" tit
 
 <img src="http://latex.codecogs.com/svg.latex?L&space;\sim&space;N(\lambda,&space;n^{-1}&space;I^{-1})" title="L \sim N(\lambda, n^{-1} I^{-1})" />
 
-In other words, the MLE is asymptotically normal with mean being the true value of <img src="http://latex.codecogs.com/svg.latex?\lambda" title="\lambda" /> and variance of order O(1/n). This is apparent in the above histograms where we can see that the distribution centers on the true value 2 for large n. We can also see from the histograms that the variance decreases with n as the distribution concentrates more tightly around 2 for large n.
+In other words, the MLE is asymptotically normal with mean being the true value of <img src="http://latex.codecogs.com/svg.latex?\lambda" title="\lambda" /> and variance of order <img src="http://latex.codecogs.com/svg.latex?O(n^{-1})" title="O(n^{-1})" />. This is apparent in the above histograms as we can see that the distribution centers around the true value 2 for large n. We can also see from the histograms that the variance decreases with n as the distribution concentrates more tightly around 2 for large n.
 
 Below is the plot of empirical standard errors for L. As expected, the errors decrease as n gets larger.
 
