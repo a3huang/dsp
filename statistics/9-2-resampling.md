@@ -1,6 +1,6 @@
 [Think Stats Chapter 9 Exercise 2](http://greenteapress.com/thinkstats2/html/thinkstats2010.html#toc90) (resampling)
 
-Running 100 hypothesis tests each on pregnancy length and birth weight, we get p-values of 0.21 and 0.0 respectively. Thus, it seems like there is no significant difference in pregnancy length between first babies and others. However, there does seem to be a significant difference in birth weight between the two groups. These results are the same as what we would have gotten had we used permutations to simulate the null hypothesis instead.
+Running 100 hypothesis tests each on pregnancy length and birth weight, we get estimated p-values of 0.21 and 0.0 respectively. Thus, it seems that there is no significant difference in pregnancy length between first babies and others. However, there does seem to be a significant difference in birth weight between the two groups. These results are the same as what we would have gotten had we used permutations to simulate the null hypothesis instead.
 
 #### Python Code:
 ```python
