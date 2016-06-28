@@ -5,7 +5,7 @@ totalwgt_lb p-value = 0.0
 
 #### Python Code:
 ```python
-mport nsfg
+import nsfg
 import numpy as np
 
 data = nsfg.ReadFemPreg()
