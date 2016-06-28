@@ -1,6 +1,6 @@
 [Think Stats Chapter 8 Exercise 3](http://greenteapress.com/thinkstats2/html/thinkstats2009.html#toc77)
 
-To simulate a game, we generate appropriate random values from an exponential distribution until the sum of these "time intervals" exceed 1. We estimate the scoring rate by counting up the number of time intervals until just before the overall sum exceeds 1, and then adding 1 to it. For example, if there were 3 time intervals within the time limit of a game, then there would have been 4 goals scored.
+To simulate a game, we generate appropriate random values from an exponential distribution until the sum of these "time intervals" exceed 1. We estimate the scoring rate by counting up the number of time intervals until just before the overall sum exceeds 1, and then adding 1 to it. For example, if there were 3 consecutive time intervals within the time limit, then there would have been 4 goals scored.
 
 For soccer, the average number of goals scored per game is usually around 3 to 5. Below are the results for a sample size of 10,000 and a scoring rate of 4 goals per game on average.
 
