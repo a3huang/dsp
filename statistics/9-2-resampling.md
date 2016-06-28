@@ -27,7 +27,7 @@ def hyptest(column, n):
     diff = abs(data.ix[g1][column].mean() - data.ix[g2][column].mean())
     results.append(diff)
     
-  return len([result for result in results if result >=  obs_diff])/float(n)
+  return len([result for result in results if result >= obs_diff]) / float(n)
 
 print hyptest('prglngth', 100)
 print hyptest('totalwgt_lb', 100)
