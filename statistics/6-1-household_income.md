@@ -9,7 +9,11 @@ The following table displays the results for different values of the log upper b
 |7.0|4.669471|4.709498|0.009902|-0.241471|0.461742|
 |8.0|4.681357|4.709498|0.171310|-0.154707|0.472889|
 
-We see that the mean, median, and fraction of incomes below the mean seem to be relatively stable with respect to the log upper bound. However, the skew seems to vary in magnitude and even changes sign depending on the value of the upper bound. While the Pearson skew keeps the same sign for each value of the upper bound, its magnitude seems to decrease as we increase the upper bound. The Pearson skew suggests that the data is left skewed for each of the above values of log_upper, but the skew suggests that the data is left skewed for some values and right skewed for others.
+We see that the mean, median, and fraction of incomes below the mean seem to be relatively stable with respect to log_upper. However, the skew seems to vary in magnitude and even changes sign depending on the value of log_upper. While the Pearson skew keeps the same sign for each value of log_upper, its magnitude seems to decrease as we increase log_upper. The Pearson skew suggests that the data is left skewed for each of the above values of log_upper, but the skew suggests that the data is left skewed for some values and right skewed for others.
+
+Below are the histograms of log_sample for each value of log_upper.
+
+![alt-text](https://github.com/a3huang/dsp/blob/master/img/hists-6-1.png)
 
 #### Python Code:
 ```python
