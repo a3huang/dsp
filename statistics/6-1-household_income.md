@@ -11,8 +11,7 @@ The following table displays the results for different values of the log upper b
 
 We see that the mean, median, and fraction of incomes below the mean seem to be relatively stable with respect to log_upper. However, the skew seems to vary in magnitude and even changes sign depending on the value of log_upper. While the Pearson skew keeps the same sign for each value of log_upper, its magnitude seems to decrease as we increase log_upper. The Pearson skew suggests that the data is left skewed for each of the above values of log_upper, but the skew suggests that the data is left skewed for some values and right skewed for others.
 
-Below are the histograms of log_sample for each value of log_upper.
-
+Below are the histograms of log_sample for each value of log_upper. From visual inspection, it seems that some of them are left skewed while others are right skewed, as suggested by the skew statistic.
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/hists-6-1.png)
 
 #### Python Code:
@@ -26,7 +25,8 @@ pd.options.mode.chained_assignment = None
 
 def skew(xs):
   mean = np.mean(xs)
-  return sum((x - mean)**3 for x in xs) / len(xs)
+  sd = np.std(xs)
+  return sum((x - mean)**3 for x in xs) / len(xs) / sd**3
 
 def p_skew(xs):
   mean = np.mean(xs)
@@ -60,7 +60,7 @@ def interpolate(upper, ax, md=False):
 
 #interpolate(5.0, md=True) # left skewed                                        
 #interpolate(6.0, md=True) # left skewed                                        
-#interpolate(7.0, md=True) # right skewed                                       
+#interpolate(7.0, md=True) # slightly right skewed
 #interpolate(8.0, md=True) # right skewed
 
 # plotting the 4 histograms together at once
@@ -68,7 +68,7 @@ fig, ax = plt.subplots(2,2)
 fig.suptitle('Histograms of log_sample', fontsize=18, fontweight='bold')
 ax = ax.flat
 for i in range(1,5):
-  interpolate(4.0 + i, ax[i-1])
+  interpolate(4.0 + i, ax[i-1], md=True)
 plt.subplots_adjust(wspace=0.5, hspace=0.5, top=.88)
 plt.savefig('hists-6-1')
 ```
