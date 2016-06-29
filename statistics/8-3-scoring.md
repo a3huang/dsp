@@ -1,6 +1,6 @@
 [Think Stats Chapter 8 Exercise 3](http://greenteapress.com/thinkstats2/html/thinkstats2009.html#toc77)
 
-To simulate a game, we generate appropriate random values from an exponential distribution until the sum of these "time intervals" exceed 1. We estimate the scoring rate by taking the number of time intervals between goals before the overall sum exceeds 1, and then adding 1 to it.
+To simulate a game, we generate appropriate random values from an exponential distribution until the sum of these "time intervals" exceed 1. We estimate the scoring rate by counting up the number of time intervals until just before the overall sum exceeds 1, and then adding 1 to it. For example, if there were 3 consecutive time intervals within the time limit, then there would have been 4 goals scored.
 
 For soccer, the average number of goals scored per game is usually around 3 to 5. Below are the results for a sample size of 10,000 and a scoring rate of 4 goals per game on average.
 
@@ -9,16 +9,16 @@ For soccer, the average number of goals scored per game is usually around 3 to 5
 |2.00|2.82|1.98|(3.00, 9.00)|
 
 Below is the accompanying histogram for these results.
-
 ![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist-8-3.png)
 
-As we can see, despite the large sample size, the histogram is skewed and there is a clear bias as it tends to overestimate the true scoring rate of 4. We can also see this from the mean error (or bias), which has a value of 2. This tells us that on average (out of 10,000 trials) the estimated scoring rate overestimates the true scoring rate by 2.
+As we can see, despite the large sample size, the histogram is skewed and there is a clear bias as it tends to overestimate the true scoring rate of 4. We can also see this from the bias (or mean error), which has a value of 2. This tells us that on average (out of 10,000 trials) the estimated scoring rate overestimates the true scoring rate by 2 goals.
 
-It is interesting to note that with small values of lambda, the histograms of the estimates tend to be skewed, even for very large values of n. However, once lambda gets large enough (at about 80), increasing n tends to make the histograms more symmetric.
+It is interesting to note that for small values of lambda, the histograms of the estimates tend to be skewed, even for very large values of n. However, once lambda gets large enough (after about 80), increasing n tends to make the histograms look more symmetric.
 
-Below is a histogram for a sample size of 10,000 and a lambda of 
+Below is a histogram for a sample size of 10,000 and a lambda of 100.
+![alt-text](https://github.com/a3huang/dsp/blob/master/img/hist2-8-3.png)
 
-The following table presents results for several sample sizes, while keeping lam = 100 constant.
+The following table presents results for several sample sizes, while holding lam = 100 constant.
 
 |Sample Size|Bias|RMSE|Standard Error|90% Confidence Interval|
 |:---|:---:|:---:|:---:|:---:|
@@ -26,16 +26,17 @@ The following table presents results for several sample sizes, while keeping lam
 |100|1.47|10.46|10.35|(85.95, 118.05)|
 |1000|1.62|10.16|10.03|(86.00, 118.00)|
 |10000|1.88|10.15|9.97|(86.00, 118.00)|
-|100000|1.99|10.17|9.97|(86.00, 119.00)|
 
-if lam is low, it will remain biased even for large n                         
-if lam is 100, large n 10000 will make the mean 100                           
+We see that as n increases, the values of bias, RMSE, and standard error all seem to remain largely the same. In contrast, if we hold n = 10,000 constant and let lambda vary, we obtain the following results:
 
-stderror: sqrt(lambda), constant in n                                         
-rmse: sqrt(lambda), constant in n                                             
-mean error (bias): constant in n, constant in lambda = 2?                     
+|<img src="http://latex.codecogs.com/svg.latex?\lambda" title="\lambda" />|Bias|RMSE|Standard Error|90% Confidence Interval|
+|:---|:---:|:---:|:---:|:---:|
+|10|1.91|3.66|3.13|(7.00, 18.00)|
+|100|2.24|10.54|10.30|(86.00, 119.00)|
+|1000|1.25|31.88|31.85|(951.00, 1054.05)|
+|10000|1.62|100.84|100.82|(9833.00, 10165.10)|
 
-increasing n will make distribution more symmetric
+Here we see that while the bias takes on roughly the same values for each lambda, the RMSE and standard error seem to be roughly proportional to the square root of lambda. Thus, unlike the case with the MLE, the standard error of this estimator remains roughly constant with respect to sample size, but varies with the square root of the true scoring rate. Of course, we don't expect 10, let alone 10,000 goals to be scored in an average soccer game, but it's interesting nevertheless to investigate the properties of this estimator of lambda and to see how it compares to the MLE. Looking back on the results in problem 8-2, we can see that the MLE is a far superior estimator even for small values of n. In particular, the standard error of the MLE is much smaller for the same values of n and is independent of the true value of lambda. Thus, to more accurately estimate the average number of goals per game, we may want to use the MLE rather than the procedure outlined here.
 
 #### Python Code:
 ```python
@@ -56,14 +57,16 @@ def sim(n, lam=10):
     results.append(game(lam))
   
   plt.hist(results)
+  plt.title('Histogram for lam = %d, n = %d' % (lam, n), fontsize=18, fontweight='bold', y=1.01)
+  plt.xlabel('Estimated Values of Rate')
+  plt.ylabel('Frequency')
+  plt.xticks(y=-.01)
+  plt.yticks(x=-.01)
   plt.savfig('hist-8-3')
+  
   bias = np.mean(results) - lam
   rmse = np.sqrt(np.mean([(result-lam)**2 for result in results]))
   stderror = np.std(results)
   confint = np.percentile(results, [5, 95])
-  
   print '%.2f %.2f %.2f (%.2f, %.2f)' % (bias, rmse, stderror, confint[0], confint[1])
-
-for i in range(100, 1000, 100):
-  sim(10000, i)
 ```
