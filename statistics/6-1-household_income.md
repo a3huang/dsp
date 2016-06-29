@@ -4,10 +4,10 @@ The following table displays the results for different values of the log upper b
 
 |log_upper|mean|median|skew|Pearson skew|frac below mean|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|5.0|4.645700|4.709498|-0.080693|-0.435652|0.439841|
-|6.0|4.657586|4.709498|-0.062768|-0.337947|0.450603|
-|7.0|4.669471|4.709498|0.009902|-0.241471|0.461742|
-|8.0|4.681357|4.709498|0.171310|-0.154707|0.472889|
+|5.0|4.645700|4.709498|-0.951620|-0.435652|0.439841|
+|6.0|4.657586|4.709498|-0.641354|-0.337947|0.450603|
+|7.0|4.669471|4.709498|0.080519|-0.241471|0.461742|
+|8.0|4.681357|4.709498|1.054188|-0.154707|0.472889|
 
 We see that the mean, median, and fraction of incomes below the mean seem to be relatively stable with respect to log_upper. However, the skew seems to vary in magnitude and even changes sign depending on the value of log_upper. While the Pearson skew keeps the same sign for each value of log_upper, its magnitude seems to decrease as we increase log_upper. The Pearson skew suggests that the data is left skewed for each of the above values of log_upper, but the skew suggests that the data is left skewed for some values and right skewed for others.
 
