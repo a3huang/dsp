@@ -9,7 +9,7 @@ The following table displays the results for different values of the log upper b
 |7.0|4.669471|4.709498|0.009902|-0.241471|0.461742|
 |8.0|4.681357|4.709498|0.171310|-0.154707|0.472889|
 
-We see that the mean, median, and fraction of incomes below the mean seem to be relatively stable with respect to the log upper bound. However, the skew seems to vary in magnitude and even changes sign depending on the value of the upper bound. While the Pearson skew keeps the same sign for each value of the upper bound, its magnitude seems to decrease as we increase the upper bound.
+We see that the mean, median, and fraction of incomes below the mean seem to be relatively stable with respect to the log upper bound. However, the skew seems to vary in magnitude and even changes sign depending on the value of the upper bound. While the Pearson skew keeps the same sign for each value of the upper bound, its magnitude seems to decrease as we increase the upper bound. The Pearson skew suggests that the data is left skewed for each of the above values of log_upper, but the skew suggests that the data is left skewed for some values and right skewed for others.
 
 #### Python Code:
 ```python
@@ -29,7 +29,7 @@ def p_skew(xs):
   sd = np.std(xs)
   return 3 * (mean - median) / sd
 
-def interpolate(upper):
+def interpolate(upper, ax, md=False):
   df = chap06soln.hinc.ReadData()
   log_sample = chap06soln.InterpolateSample(df, log_upper=upper)
   mean = np.mean(log_sample)
@@ -44,9 +44,26 @@ def interpolate(upper):
     print 'log_upper: %.1f\nmean: %f\nmedian: %f\nskew: %f\nPearson skew:' \
       '%f\nfrac below mean: %f\n' % (upper, mean, median, skew(log_sample),
       p_skew(log_sample), frac)
+  
+  # plot single histogram on passed in axis object                              
+  ax.hist(log_sample)
+  ax.set_title('log_upper = %.1f' % upper, fontsize=14, fontweight='bold')
+  ax.set_xlabel('log_sample')
+  ax.set_ylabel('Frequency')
+  ax.locator_params(axis='x', nbins=7)
+  ax.tick_params(axis='both', which='major', pad=8)
 
-interpolate(5.0, md=True)
-interpolate(6.0, md=True)
-interpolate(7.0, md=True)
-interpolate(8.0, md=True)
+#interpolate(5.0, md=True) # left skewed                                        
+#interpolate(6.0, md=True) # left skewed                                        
+#interpolate(7.0, md=True) # right skewed                                       
+#interpolate(8.0, md=True) # right skewed
+
+# plotting the 4 histograms together at once
+fig, ax = plt.subplots(2,2)
+fig.suptitle('Histograms of log_sample', fontsize=18, fontweight='bold')
+ax = ax.flat
+for i in range(1,5):
+  interpolate(4.0 + i, ax[i-1])
+plt.subplots_adjust(wspace=0.5, hspace=0.5, top=.88)
+plt.savefig('hists-6-1')
 ```
