@@ -16,6 +16,7 @@ We see that the mean, median, and fraction of incomes below the mean seem to be 
 import chap06soln
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 pd.options.mode.chained_assignment = None
 
