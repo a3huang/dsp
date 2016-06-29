@@ -10,6 +10,7 @@ import numpy as np
 def skew(xs):
   mean = np.mean(xs)
   return sum((x - mean)**3 for x in xs) / len(xs)
+  
 def p_skew(xs):
   mean = np.mean(xs)
   median = np.median(xs)
