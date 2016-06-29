@@ -9,6 +9,8 @@ The following table displays the results for different values of the log upper b
 |7.0|4.669471|4.709498|0.009902|-0.241471|0.461742|
 |8.0|4.681357|4.709498|0.171310|-0.154707|0.472889|
 
+We see that the mean, median, and fraction of incomes below the mean seem to be relatively stable with respect to the log upper bound. However, the skew seems to vary in magnitude and even changes sign depending on the value of the upper bound. While the Pearson skew keeps the same sign for each value of the upper bound, its magnitude seems to decrease as we increase the upper bound.
+
 #### Python Code:
 ```python
 import chap06soln
